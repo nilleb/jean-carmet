@@ -12,5 +12,5 @@ dans Google Agenda avec l'horaire, la durée réelle du film et le lieu.
 
 `index.html` est généré, jamais édité à la main. La source vit dans le vault :
 `~/dev/brain/.scripts/jean-carmet/` (données `program.json` + `template.html` +
-`render.py`), rafraîchie chaque lundi matin par la skill `/jean-carmet-weekly`
+`render.py`), rafraîchie chaque dimanche matin par la skill `/jean-carmet-weekly`
 (launchd `co.nillebco.jean-carmet-weekly`), qui republie ici et poste le lien sur Signal.
