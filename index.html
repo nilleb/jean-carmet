@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Les soirées à 19h30 et plus du Théâtre Cinéma Jean Carmet, à Mornant — du 2 au 29 septembre 2026.">
+<title>Soirées au Jean Carmet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+  :root {
+    --ground:      #E7E7E1;
+    --surface:     #F2F2EE;
+    --ink:         #14171E;
+    --ink-soft:    #4A4E58;
+    --ink-faint:   #82868F;
+    --rule:        #C8C8C0;
+    --amber:       #9F5A11;
+    --amber-soft:  #EDDCC3;
+    --rose:        #8F2C45;
+    --rose-soft:   #ECD4D9;
+    --focus:       #14171E;
+
+    --f-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --f-body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --f-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground:      #12151B;
+      --surface:     #191D25;
+      --ink:         #ECEDE9;
+      --ink-soft:    #A9AEB8;
+      --ink-faint:   #767B86;
+      --rule:        #2C313B;
+      --amber:       #E5A94F;
+      --amber-soft:  #3A2E19;
+      --rose:        #E58098;
+      --rose-soft:   #3A222A;
+      --focus:       #E5A94F;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground:      #12151B;
+    --surface:     #191D25;
+    --ink:         #ECEDE9;
+    --ink-soft:    #A9AEB8;
+    --ink-faint:   #767B86;
+    --rule:        #2C313B;
+    --amber:       #E5A94F;
+    --amber-soft:  #3A2E19;
+    --rose:        #E58098;
+    --rose-soft:   #3A222A;
+    --focus:       #E5A94F;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--f-body);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4.5rem) clamp(1.1rem, 4vw, 2rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.25rem;
+  }
+
+  header { display: flex; flex-direction: column; gap: 1rem; }
+
+  .eyebrow {
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+  }
+
+  h1 {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  h1 em { font-style: normal; color: var(--amber); }
+
+  .standfirst { margin: 0; max-width: 34em; color: var(--ink-soft); font-size: 1.05rem; }
+  .standfirst strong { color: var(--ink); font-weight: 600; }
+
+  .sources {
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 0 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .sources h2 {
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin: 0 0 0.2rem;
+  }
+
+  .sources a { color: var(--ink); text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  .sources a:hover { text-decoration-color: var(--amber); color: var(--amber); }
+
+  .src-note { font-family: var(--f-mono); font-size: 0.7rem; color: var(--ink-faint); letter-spacing: 0.02em; margin: 0; }
+  .src-note a { color: var(--ink-soft); }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+  }
+
+  .controls label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--ink-soft);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 0.42rem 0.7rem;
+    background: var(--surface);
+  }
+
+  .controls label:hover { border-color: var(--amber); color: var(--ink); }
+  .controls input { accent-color: var(--amber); margin: 0; }
+  .controls input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  section { display: flex; flex-direction: column; gap: 1.4rem; }
+  .sec-head { display: flex; flex-direction: column; gap: 0.35rem; }
+
+  h2.sec-title {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .sec-note { margin: 0; color: var(--ink-soft); font-size: 0.95rem; max-width: 40em; }
+
+  .week {
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0;
+    padding: 1.5rem 0 0.45rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section > .week:first-of-type { padding-top: 0; }
+
+  ol.bill { list-style: none; margin: 0; padding: 0; }
+
+  li.slot {
+    display: grid;
+    grid-template-columns: 5.4rem 1fr;
+    gap: 0 1.1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  li.slot.late { display: none; }
+  body.show-late li.slot.late { display: grid; }
+
+  .when {
+    font-family: var(--f-mono);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.25;
+    padding-top: 0.15rem;
+  }
+
+  .day {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .hour { display: block; font-size: 1.15rem; font-weight: 600; color: var(--ink); }
+  li.slot.late .hour { color: var(--ink-faint); }
+
+  .what { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+
+  .what h3 {
+    margin: 0;
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 1.14rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .what h3 a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--amber);
+    text-underline-offset: 3px;
+  }
+
+  .what h3 a:hover { color: var(--amber); }
+
+  .what h3 a:focus-visible,
+  .sources a:focus-visible,
+  .cal:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  .meta { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+  .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; margin-top: 0.1rem; }
+
+  .tag {
+    font-family: var(--f-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.42rem;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .tag.hot { border-color: var(--amber); color: var(--amber); background: var(--amber-soft); }
+  .tag.stage { border-color: var(--rose); color: var(--rose); background: var(--rose-soft); }
+  .tag.dim { color: var(--ink-faint); }
+
+  a.cal {
+    font-family: var(--f-mono);
+    font-size: 0.63rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border: 1px dashed var(--ink-faint);
+    border-radius: 2px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  a.cal:hover { border-style: solid; border-color: var(--amber); color: var(--amber); background: var(--amber-soft); }
+
+  li.slot.stage {
+    background: linear-gradient(90deg, var(--rose-soft), transparent 62%);
+    margin-inline: -0.7rem;
+    padding-inline: 0.7rem;
+  }
+
+  li.slot.stage .what h3 a { text-decoration-color: var(--rose); }
+  li.slot.stage .what h3 a:hover { color: var(--rose); }
+
+  footer {
+    border-top: 2px solid var(--ink);
+    padding-top: 1rem;
+    color: var(--ink-faint);
+    font-family: var(--f-mono);
+    font-size: 0.72rem;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 30rem) {
+    li.slot { grid-template-columns: 4.4rem 1fr; gap: 0 0.8rem; }
+    .hour { font-size: 1.02rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Théâtre Cinéma Jean Carmet · Boulevard du Pilat, Mornant</p>
+    <h1>Soirées au <em>Jean&nbsp;Carmet</em></h1>
+    <p class="standfirst">Relevé dans la grille horaires <strong>du 2 au 29 septembre 2026</strong> et dans la plaquette de saison 26/27. Les séances qui commencent <strong>avant 19h30</strong> sont masquées par défaut. Chaque ligne s'ajoute à l'agenda en un clic.</p>
+  </header>
+
+  <div class="sources">
+    <h2>Les PDF</h2>
+    <a href="https://www.calameo.com/read/001502073f505cbd51a84" target="_blank" rel="noopener">Plaquette de saison 26/27 — tous les spectacles</a>
+    <a href="https://www.theatre-cinema-jean-carmet.fr/media/attachments/2026/08/25/grille.pdf" target="_blank" rel="noopener">Grille horaires du 2 au 29 septembre 2026 (PDF direct)</a>
+    <a href="https://www.calameo.com/read/001502073d27d30c0de37" target="_blank" rel="noopener">Programme cinéma du 2 au 29 septembre 2026</a>
+    <p class="src-note">Les deux Calaméo se consultent en ligne : le téléchargement direct renvoie une erreur 403.</p>
+  </div>
+
+  <div class="controls">
+    <label><input type="checkbox" id="late-toggle"> Afficher aussi les séances avant 19h30</label>
+    <p class="src-note">Réservations : 04 78 44 05 17 · <a href="https://billetterie-tcjc.mapado.com/" target="_blank" rel="noopener">billetterie</a></p>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2 class="sec-title">Cinéma — les séances du soir</h2>
+      <p class="sec-note">Uniquement les séances à 19h30 ou plus tard, du 2 au 29 septembre 2026. Chaque titre renvoie vers sa fiche AlloCiné : synopsis, critiques presse et spectateurs, en français.</p>
+    </div>
+
+    <p class="week">Semaine du 2 au 8 septembre</p>
+    <ol class="bill">
+      <li class="slot" data-start="20260902T2030" data-mins="146" data-title="Fjord" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=188280.html">
+        <span class="when"><span class="day">Mer 2</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=188280.html" target="_blank" rel="noopener">Fjord</a></h3>
+          <p class="meta">Cristian Mungiu — drame, 2h26. Palme d&#x27;or 2026.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag hot">Palme d&#x27;or</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260903T2030" data-mins="91" data-title="Tombé du ciel" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000032856.html">
+        <span class="when"><span class="day">Jeu 3</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000032856.html" target="_blank" rel="noopener">Tombé du ciel</a></h3>
+          <p class="meta">Mohamed Hamidi, avec Ilyes Djadel et Josiane Balasko — comédie familiale, 1h31.</p>
+          
+        </span>
+      </li>
+      <li class="slot stage" data-start="20260904T1900" data-mins="180" data-title="Présentation de saison" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/128-lancement-de-saison.html?Itemid=101">
+        <span class="when"><span class="day">Ven 4</span><span class="hour">19h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/128-lancement-de-saison.html?Itemid=101" target="_blank" rel="noopener">Présentation de saison</a></h3>
+          <p class="meta">Pas de séance ce soir-là : la salle fête l&#x27;ouverture de la saison 26/27.</p>
+          <span class="tags"><span class="tag stage">Spectacle</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260905T2030" data-mins="91" data-title="Tombé du ciel" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000032856.html">
+        <span class="when"><span class="day">Sam 5</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000032856.html" target="_blank" rel="noopener">Tombé du ciel</a></h3>
+          <p class="meta">Deuxième soirée.</p>
+          
+        </span>
+      </li>
+      <li class="slot" data-start="20260907T2030" data-mins="120" data-title="Coup de cœur surprise" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant">
+        <span class="when"><span class="day">Lun 7</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3>Coup de cœur surprise</h3>
+          <p class="meta">Titre non annoncé — on le découvre sur place. Pas de fiche AlloCiné, forcément.</p>
+          <span class="tags"><span class="tag hot">Surprise</span></span>
+        </span>
+      </li>
+    </ol>
+
+    <p class="week">Semaine du 9 au 15 septembre</p>
+    <ol class="bill">
+      <li class="slot" data-start="20260909T2030" data-mins="146" data-title="Fjord" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=188280.html">
+        <span class="when"><span class="day">Mer 9</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=188280.html" target="_blank" rel="noopener">Fjord</a></h3>
+          <p class="meta">Cristian Mungiu — drame, 2h26.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag hot">Séance avec animation</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260910T2000" data-mins="164" data-title="L&#x27;Aventure rêvée" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=305835.html">
+        <span class="when"><span class="day">Jeu 10</span><span class="hour">20h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=305835.html" target="_blank" rel="noopener">L&#x27;Aventure rêvée</a></h3>
+          <p class="meta">Valeska Grisebach — drame, 2h44. Prix du Jury, Cannes 2026.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag">2h44</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260911T2030" data-mins="81" data-title="Un grand raccourci" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000041528.html">
+        <span class="when"><span class="day">Ven 11</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000041528.html" target="_blank" rel="noopener">Un grand raccourci</a></h3>
+          <p class="meta">Armand Foëx et Clément Devilliers — comédie dramatique, 1h21. Premier long des deux réalisateurs, 22 ans.</p>
+          
+        </span>
+      </li>
+      <li class="slot" data-start="20260912T2030" data-mins="99" data-title="La Fin d&#x27;Oak Street" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=314503.html">
+        <span class="when"><span class="day">Sam 12</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=314503.html" target="_blank" rel="noopener">La Fin d&#x27;Oak Street</a></h3>
+          <p class="meta">David Robert Mitchell, avec Anne Hathaway et Ewan McGregor — SF/aventure, 1h39.</p>
+          
+        </span>
+      </li>
+    </ol>
+
+    <p class="week">Semaine du 16 au 22 septembre</p>
+    <ol class="bill">
+      <li class="slot" data-start="20260916T2030" data-mins="140" data-title="L&#x27;Inconnue" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=327993.html">
+        <span class="when"><span class="day">Mer 16</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=327993.html" target="_blank" rel="noopener">L&#x27;Inconnue</a></h3>
+          <p class="meta">Arthur Harari, avec Léa Seydoux et Niels Schneider — thriller fantastique, 2h20.</p>
+          <span class="tags"><span class="tag">Dès 12 ans</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260917T2030" data-mins="116" data-title="The Last Viking" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=316460.html">
+        <span class="when"><span class="day">Jeu 17</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=316460.html" target="_blank" rel="noopener">The Last Viking</a></h3>
+          <p class="meta">Anders Thomas Jensen, avec Mads Mikkelsen — comédie noire, 1h56.</p>
+          <span class="tags"><span class="tag">VO</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260919T2030" data-mins="97" data-title="Fini de rire ! L&#x27;humour politique au garde-à-vous ?" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000048319.html">
+        <span class="when"><span class="day">Sam 19</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000048319.html" target="_blank" rel="noopener">Fini de rire ! L&#x27;humour politique au garde-à-vous ?</a></h3>
+          <p class="meta">Documentaire, 1h37 — trente ans de censure des humoristes politiques.</p>
+          <span class="tags"><span class="tag hot">Avant-première</span><span class="tag">Séance avec animation</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260920T1930" data-mins="134" data-title="Vol au-dessus d&#x27;un nid de coucou" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=2072.html">
+        <span class="when"><span class="day">Dim 20</span><span class="hour">19h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=2072.html" target="_blank" rel="noopener">Vol au-dessus d&#x27;un nid de coucou</a></h3>
+          <p class="meta">Milos Forman, avec Jack Nicholson — 1975, 2h14. Séance présentée par Louis Morel.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag">Play It Again</span><span class="tag">Dès 12 ans</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260921T2030" data-mins="90" data-title="Paradise" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=308394.html">
+        <span class="when"><span class="day">Lun 21</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=308394.html" target="_blank" rel="noopener">Paradise</a></h3>
+          <p class="meta">Jérémy Comte — drame Ghana/Québec, 1h30. Compétition, Cannes 2026.</p>
+          <span class="tags"><span class="tag">VO</span></span>
+        </span>
+      </li>
+    </ol>
+
+    <p class="week">Semaine du 23 au 29 septembre</p>
+    <ol class="bill">
+      <li class="slot" data-start="20260923T2030" data-mins="98" data-title="La Vie d&#x27;une femme" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=327941.html">
+        <span class="when"><span class="day">Mer 23</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=327941.html" target="_blank" rel="noopener">La Vie d&#x27;une femme</a></h3>
+          <p class="meta">Charline Bourgeois-Tacquet, avec Léa Drucker et Mélanie Thierry — drame, 1h38.</p>
+          
+        </span>
+      </li>
+      <li class="slot" data-start="20260924T2030" data-mins="108" data-title="Dégel" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000039625.html">
+        <span class="when"><span class="day">Jeu 24</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000039625.html" target="_blank" rel="noopener">Dégel</a></h3>
+          <p class="meta">Manuela Martelli — drame chilien, 1h48. Un Certain Regard, Cannes 2026.</p>
+          <span class="tags"><span class="tag">VO</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260925T2000" data-mins="182" data-title="Apocalypse Now Final Cut" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=27061.html">
+        <span class="when"><span class="day">Ven 25</span><span class="hour">20h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=27061.html" target="_blank" rel="noopener">Apocalypse Now Final Cut</a></h3>
+          <p class="meta">Francis Ford Coppola — 1979, 3h02. Prévoir de finir tard.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag">Play It Again</span></span>
+        </span>
+      </li>
+      <li class="slot late" data-start="20260926T1830" data-mins="111" data-title="Kill Bill : Volume 1" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=28541.html">
+        <span class="when"><span class="day">Sam 26</span><span class="hour">18h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=28541.html" target="_blank" rel="noopener">Kill Bill : Volume 1</a></h3>
+          <p class="meta">Quentin Tarantino — 2003. Première moitié de l&#x27;intégrale « The Whole Bloody Affair » : commence avant 19h30, mais c&#x27;est le même programme que la séance de 20h30.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag">Play It Again</span><span class="tag dim">-16</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260926T2030" data-mins="135" data-title="Kill Bill : Volume 2" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=53879.html">
+        <span class="when"><span class="day">Sam 26</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=53879.html" target="_blank" rel="noopener">Kill Bill : Volume 2</a></h3>
+          <p class="meta">Quentin Tarantino — 2004, 2h15. Second volet de l&#x27;intégrale.</p>
+          <span class="tags"><span class="tag">VO</span><span class="tag">Play It Again</span><span class="tag dim">-16</span></span>
+        </span>
+      </li>
+      <li class="slot" data-start="20260927T1930" data-mins="120" data-title="Trois adieux" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000019852.html">
+        <span class="when"><span class="day">Dim 27</span><span class="hour">19h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.allocine.fr/film/fichefilm_gen_cfilm=1000019852.html" target="_blank" rel="noopener">Trois adieux</a></h3>
+          <p class="meta">Isabel Coixet, avec Alba Rohrwacher et Elio Germano — drame, 2h.</p>
+          <span class="tags"><span class="tag">VO</span></span>
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2 class="sec-title">Les spectacles</h2>
+      <p class="sec-note">Septembre est un mois de cinéma : le seul rendez-vous de scène est la soirée de lancement. La saison démarre vraiment le 9 octobre. Chaque titre pointe vers sa page sur le site du théâtre.</p>
+    </div>
+
+    <p class="week">Prochain mois</p>
+    <ol class="bill">
+      <li class="slot stage" data-start="20260904T1900" data-mins="180" data-title="Lancement de saison « Carton plein »" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/128-lancement-de-saison.html?Itemid=101">
+        <span class="when"><span class="day">Ven 4 sept</span><span class="hour">19h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/128-lancement-de-saison.html?Itemid=101" target="_blank" rel="noopener">Lancement de saison « Carton plein »</a></h3>
+          <p class="meta">Présentation de la saison 26/27, DJ set, apéro et animations décalées.</p>
+          <span class="tags"><span class="tag stage">Spectacle</span><span class="tag hot">Le seul en septembre</span></span>
+        </span>
+      </li>
+    </ol>
+
+    <p class="week">Ensuite — saison 26/27</p>
+    <ol class="bill">
+      <li class="slot stage" data-start="20261009T2030" data-mins="90" data-title="Memento — Cie Mazelfreten" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/129-festival-karavel-8-memento-cie-mazelfreten.html?Itemid=101">
+        <span class="when"><span class="day">Ven 9 oct</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/129-festival-karavel-8-memento-cie-mazelfreten.html?Itemid=101" target="_blank" rel="noopener">Memento — Cie Mazelfreten</a></h3>
+          <p class="meta">Danse hip-hop / électro, six interprètes. Festival Karavel #8, pour les 20 ans du festival.</p>
+          <span class="tags"><span class="tag stage">Danse</span><span class="tag">Dès 8 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20261015T2000" data-mins="120" data-title="MPL — concert" data-loc="Le Briscope, Brignais" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Jeu 15 oct</span><span class="hour">20h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">MPL — concert</a></h3>
+          <p class="meta">Hors les murs, au Briscope à Brignais. Billet couplé MPL + P.R2B à 45 €.</p>
+          <span class="tags"><span class="tag stage">Concert</span><span class="tag dim">Hors les murs</span></span>
+        </span>
+      </li>
+      <li class="slot stage late" data-start="20261021T1500" data-mins="90" data-title="Ça tartines ! — Fabuleuses intrépides" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Mer 21 oct</span><span class="hour">journée</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Ça tartines ! — Fabuleuses intrépides</a></h3>
+          <p class="meta">Ciné-concert jeune public suivi d&#x27;un goûter. Également les 17 février, 24 mars et 14 avril.</p>
+          <span class="tags"><span class="tag stage">Jeune public</span><span class="tag dim">Dès 2 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20261106T2030" data-mins="90" data-title="Constance — InCONSTANCE" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/107-constance-inconstance.html?Itemid=101">
+        <span class="when"><span class="day">Ven 6 nov</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/107-constance-inconstance.html?Itemid=101" target="_blank" rel="noopener">Constance — InCONSTANCE</a></h3>
+          <p class="meta">Seule-en-scène-confession sur la santé mentale, hilarant et juste.</p>
+          <span class="tags"><span class="tag stage">Humour</span><span class="tag">Déconseillé -15 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20261120T2030" data-mins="105" data-title="P.R2B" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/131-p-r2b.html?Itemid=101">
+        <span class="when"><span class="day">Ven 20 nov</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/131-p-r2b.html?Itemid=101" target="_blank" rel="noopener">P.R2B</a></h3>
+          <p class="meta">Chanson française / pop électro. Nouvel album, après une Cigale complète.</p>
+          <span class="tags"><span class="tag stage">Concert</span><span class="tag">Dès 11 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage late" data-start="20261128T1700" data-mins="90" data-title="PANDAX — Cirque La Compagnie" data-loc="Parc de l&#x27;Hôtel de Ville, Brignais" data-url="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/133-pandax.html?Itemid=101">
+        <span class="when"><span class="day">28–29 nov</span><span class="hour">17h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/component/content/article/13-agenda/133-pandax.html?Itemid=101" target="_blank" rel="noopener">PANDAX — Cirque La Compagnie</a></h3>
+          <p class="meta">Huis clos acrobatique et musical dans une Fiat Panda. Festival Cirqu&#x27;à l&#x27;Ouest, parc de l&#x27;Hôtel de Ville à Brignais.</p>
+          <span class="tags"><span class="tag stage">Cirque</span><span class="tag dim">Hors les murs</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20261203T2030" data-mins="90" data-title="Le Problème Lapin — Frédéric Ferrer" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Jeu 3 déc</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Le Problème Lapin — Frédéric Ferrer</a></h3>
+          <p class="meta">Cartographie 7 : deux conférenciers, maîtres de la dramaturgie du PowerPoint.</p>
+          <span class="tags"><span class="tag stage">Humour</span><span class="tag">Dès 12 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270107T2030" data-mins="90" data-title="Les Gros patinent bien" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Jeu 7 janv</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Les Gros patinent bien</a></h3>
+          <p class="meta">Pierre Guillois et Olivier Martin-Salvan. Molière du Théâtre public 2022.</p>
+          <span class="tags"><span class="tag stage">Théâtre</span><span class="tag">Dès 10 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270129T2030" data-mins="90" data-title="Ritam — Kader Belmoktar &amp; Stracho Temelkovski" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Ven 29 janv</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Ritam — Kader Belmoktar &amp; Stracho Temelkovski</a></h3>
+          <p class="meta">Danse et musique du monde, par le danseur-assistant chorégraphe de la Cie Käfig.</p>
+          <span class="tags"><span class="tag stage">Danse</span><span class="tag">Dès 7 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270209T2000" data-mins="90" data-title="J&#x27;oublie tout — Julien Gallix" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Mar 9 fév</span><span class="hour">20h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">J&#x27;oublie tout — Julien Gallix</a></h3>
+          <p class="meta">Seul en scène : un gamin du Sud, le rappeur Jul, et une bouée de sauvetage.</p>
+          <span class="tags"><span class="tag stage">Seul en scène</span><span class="tag">Dès 10 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270311T2030" data-mins="90" data-title="Couleur Framboise — Mehdi Djaadi" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Jeu 11 mars</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Couleur Framboise — Mehdi Djaadi</a></h3>
+          <p class="meta">Après « Coming-out » : l&#x27;infertilité masculine, drôle et bouleversant.</p>
+          <span class="tags"><span class="tag stage">Seul en scène</span><span class="tag">Dès 14 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage late" data-start="20270314T1700" data-mins="90" data-title="Théâtre mode d&#x27;emploi — Cie Spell Mistake&#x27;s" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Dim 14 mars</span><span class="hour">17h00</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Théâtre mode d&#x27;emploi — Cie Spell Mistake&#x27;s</a></h3>
+          <p class="meta">Démontage malicieux des clichés du théâtre. En partenariat avec le Département du Rhône.</p>
+          <span class="tags"><span class="tag stage">Théâtre</span><span class="tag dim">Dès 11 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270402T2030" data-mins="90" data-title="Spectacles mystères #3" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Ven 2 avr</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Spectacles mystères #3</a></h3>
+          <p class="meta">Programmation secrète : cirque, danse, théâtre, musique… un seul indice, ce sera très différent des deux éditions précédentes.</p>
+          <span class="tags"><span class="tag stage">Mystère</span><span class="tag">De 14 à 108 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270430T2030" data-mins="105" data-title="Made in France — Cie La Poursuite du Bleu" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Ven 30 avr</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">Made in France — Cie La Poursuite du Bleu</a></h3>
+          <p class="meta">Molière 2026 de la mise en scène (théâtre privé). Un antihéros se réinvente syndicaliste.</p>
+          <span class="tags"><span class="tag stage">Théâtre</span><span class="tag">Dès 13 ans</span></span>
+        </span>
+      </li>
+      <li class="slot stage" data-start="20270521T2030" data-mins="90" data-title="L&#x27;Art d&#x27;avoir toujours raison — Cie Cassandre" data-loc="Théâtre Cinéma Jean Carmet, Boulevard du Pilat, 69440 Mornant" data-url="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html">
+        <span class="when"><span class="day">Ven 21 mai</span><span class="hour">20h30</span></span>
+        <span class="what">
+          <h3><a href="https://www.theatre-cinema-jean-carmet.fr/spectacles/saison-26-27.html" target="_blank" rel="noopener">L&#x27;Art d&#x27;avoir toujours raison — Cie Cassandre</a></h3>
+          <p class="meta">Conférence-spectacle décalée sur les secrets rhétoriques du pouvoir.</p>
+          <span class="tags"><span class="tag stage">Conférence-spectacle</span><span class="tag">Dès 15 ans</span></span>
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    Relevé le 2026-08-30 sur la grille horaires et la plaquette de saison du Théâtre Cinéma Jean Carmet (COPAMO) · fiches films sur <a href="https://www.allocine.fr/seance/salle_gen_csalle=P0288.html" target="_blank" rel="noopener">AlloCiné</a> · billetterie <a href="https://billetterie-tcjc.mapado.com/" target="_blank" rel="noopener">mapado</a> · 04 78 44 05 17
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var toggle = document.getElementById('late-toggle');
+    function applyLate() { document.body.classList.toggle('show-late', toggle.checked); }
+    toggle.addEventListener('change', applyLate);
+    applyLate();
+
+    // "20260902T2030" + minutes -> "20260902T230000", en heure locale de Mornant.
+    // Google Calendar interprète ces horodatages naïfs via le paramètre ctz.
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+    function shift(stamp, minutes) {
+      var y = +stamp.slice(0, 4), mo = +stamp.slice(4, 6), d = +stamp.slice(6, 8);
+      var h = +stamp.slice(9, 11), mi = +stamp.slice(11, 13);
+      var t = new Date(Date.UTC(y, mo - 1, d, h, mi) + minutes * 60000);
+      return t.getUTCFullYear() + pad(t.getUTCMonth() + 1) + pad(t.getUTCDate())
+        + 'T' + pad(t.getUTCHours()) + pad(t.getUTCMinutes()) + '00';
+    }
+
+    document.querySelectorAll('li.slot[data-start]').forEach(function (slot) {
+      var start = slot.dataset.start;
+      var params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: slot.dataset.title,
+        dates: shift(start, 0) + '/' + shift(start, +slot.dataset.mins),
+        ctz: 'Europe/Paris',
+        location: slot.dataset.loc,
+        details: (slot.dataset.url ? slot.dataset.url + '\n\n' : '')
+          + 'Réservations : 04 78 44 05 17 — https://billetterie-tcjc.mapado.com/'
+      });
+
+      var link = document.createElement('a');
+      link.className = 'cal';
+      link.href = 'https://calendar.google.com/calendar/render?' + params.toString();
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = '+ Agenda';
+      link.setAttribute('aria-label', 'Ajouter « ' + slot.dataset.title + ' » à l’agenda');
+
+      var tags = slot.querySelector('.tags');
+      if (!tags) {
+        tags = document.createElement('span');
+        tags.className = 'tags';
+        slot.querySelector('.what').appendChild(tags);
+      }
+      tags.appendChild(link);
+    });
+  })();
+</script>
+</body>
+</html>
